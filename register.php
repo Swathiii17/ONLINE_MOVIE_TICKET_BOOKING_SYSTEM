@@ -1,0 +1,6 @@
+<?php session_start(); if(isset($_SESSION['user_id'])){header("Location: index.php");exit;} ?>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Register | CineBook</title><link rel="stylesheet" href="css/style.css"></head>
+<body class="auth-body"><div class="auth-wrap"><a class="brand centered" href="index.php"><span>CB</span> CineBook</a><div class="auth-card"><span class="eyebrow">JOIN CINEBOOK</span><h1>Create account</h1><p>Register once and make your next booking faster.</p>
+<?php if(isset($_GET['error'])):?><div class="alert"><?= htmlspecialchars($_GET['error']) ?></div><?php endif;?>
+<form method="post" action="php/register.php"><label>Full name<input type="text" name="name" required placeholder="Your name"></label><label>Email<input type="email" name="email" required placeholder="you@example.com"></label><label>Password<input type="password" name="password" minlength="6" required placeholder="Minimum 6 characters"></label><button class="btn full" type="submit">Create account</button></form>
+<p class="switch">Already registered? <a href="login.php">Sign in</a></p></div></div></body></html>
